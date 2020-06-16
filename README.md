@@ -1,8 +1,8 @@
 # HiberTor
 <h1>CREDIT</h1>
-<pre>Hibernet</pre>
+<h2>Hibernet</h2>
 <h2>https://github.com/All3xJ/Hibernet</h2>
-<pre>Multi-tor</pre>
+<h2>Multi-tor</h2>
 <h2>https://github.com/thelinuxchoice/ddostor</h2>
 
 
