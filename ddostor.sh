@@ -39,7 +39,7 @@ default_tor="y"
 
 inst="${inst:-${default_inst}}"
 read -e -p $'\e[1;92m[\e[0m\e[1;77m?\e[0m\e[1;92m] Anonymized via Tor? \e[0m\e[1;77m[Y/n]: \e[0m' tor
-echo > proxy.txt
+rm proxy.txt
 printf "\e[0m"
 tor="${tor:-${default_tor}}"
 if [[ $tor == "y" || $tor == "Y" ]]; then
